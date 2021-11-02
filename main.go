@@ -1,16 +1,10 @@
 package main
 
-import (
-	CORE "MiniGraft/core"
-)
-
 func main() {
 
-	engine := CORE.InitEngine(CORE.GAME_SETTINGS{Width: 600, Height: 400, Title: "MiniGraft"})
-	engine.Setup()
-	engine.Run()
-	engine.Cleanup()
-	engine.Exit()
+	engine := Game{}
+	engine.Init("Untitled", vector2{800, 400})
+	engine.run()
+	engine.statestack.Cleanup()
 
-	return
 }
